@@ -21,6 +21,11 @@ mongoose
   .then(() => console.log("connected to database"))
   .catch((err) => console.log(err.message));
 
+// routes
+app.get("/", (req, res) => {
+  res.send("hi");
+});
+
 // server config
 
 const PORT = process.env.PORT || 50000;
