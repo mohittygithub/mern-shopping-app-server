@@ -22,6 +22,7 @@ mongoose
   .catch((err) => console.log(err.message));
 
 // server config
+
 const PORT = process.env.PORT || 50000;
 
 app.listen(PORT, () => {
