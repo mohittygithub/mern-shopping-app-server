@@ -21,8 +21,22 @@ mongoose
   .then(() => console.log("connected to database"))
   .catch((err) => console.log(err.message));
 
+// mongoose models
+
+const Product = mongoose.model(
+  "products",
+  new mongoose.Schema({
+    _id: { type: shortId.generate },
+    title: String,
+    description: String,
+    image: String,
+    price: Number,
+    availableSizes: [String],
+  })
+);
+
 // routes
-app.get("/", (req, res) => {
+app.get("/api/products", (req, res) => {
   res.send("hi");
 });
 
